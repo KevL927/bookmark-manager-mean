@@ -1,0 +1,19 @@
+    <div class="item" ng-repeat="(key, value) in bookmarks | groupBy: '_categoryId.title'">
+      <input type="checkbox" />
+      <span ng-click="bookmark.edited = true"></span>
+      <label ng-hide="editing" ng-click="editing=true">{{key}}</label>
+      <input ng-show="editing" ng-blur="editing = false" class="editing-label" type="text" ng-model="key" ng-change="bookmark.edited = true"/>
+      <div ng-repeat="bookmark in value">
+        <div class="item">
+            <label ng-hide="editing">{{bookmark.name}}</label>
+            <input ng-show="editing" ng-blur="editing = false" class="editing-label" type="text" ng-model="bookmark.name" ng-change="bookmark.edited = true"/>
+            <a class="link" ng-hide="editing" ng-href="http://{{bookmark.url}}">{{bookmark.url}}</a>
+            <input ng-show="editing" ng-blur="editing = false" class="editing-label" type="text" ng-model="bookmark.url" ng-change="bookmark.edited = true"/>
+          <div class="actions">
+            <a href="" class="edit" ng-click="editing = !editing">Edit</a>
+            <a href="" ng-click="saveBookmarks()">Save</a>
+            <a href="" class="delete" ng-click="deleteBookmark(bookmark)">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>

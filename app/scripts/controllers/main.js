@@ -9,7 +9,7 @@ function MainCtrl ($scope, dataService) {
   });
 
   $scope.addBookmark = function() {
-    $scope.bookmarks.unshift({name: "New entry"});
+    $scope.bookmarks.unshift({_categoryId: "582f1c518a32280ae0215f46", name: "New entry", url: "www.typeyoururl.com"});
   };
 
 }

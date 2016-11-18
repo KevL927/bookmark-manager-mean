@@ -19,9 +19,9 @@ function DataService ($http, $q) {
     bookmarks.forEach(function(bookmark) {
       var request;
       if(!bookmark._id) {
-        request = $http.post('/api/bookmarks', bookmark);
+        request = $http.post('/api/bookmarks/582f1c518a32280ae0215f46', bookmark);
       } else {
-        request = $http.put('/api/bookmarks/' + bookmark._id, bookmark).then(function(result) {
+        request = $http.put('/api/bookmark/' + bookmark._id, bookmark).then(function(result) {
           bookmark = result.data.bookmark;
           return bookmark;
         });
