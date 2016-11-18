@@ -2,28 +2,28 @@
 
 function DataService ($http, $q) {
 
-  this.getTodos = function(cb) {
-    $http.get('/api/todos').then(cb);
+  this.getBookmarks = function(cb) {
+    $http.get('/api/bookmarks').then(cb);
   };
 
-  this.deleteTodo = function(todo) {
-    if (!todo._id) {
+  this.deleteBookmark = function(bookmark) {
+    if (!bookmark._id) {
       return $q.resolve();
     }
-    return $http.delete('/api/todos/' + todo._id).then(function() {
+    return $http.delete('/api/bookmark/' + bookmark._id).then(function() {
     });
   };
 
-  this.saveTodos = function(todos) {
+  this.saveBookmarks = function(bookmarks) {
     var queue = [];
-    todos.forEach(function(todo) {
+    bookmarks.forEach(function(bookmark) {
       var request;
-      if(!todo._id) {
-        request = $http.post('/api/todos', todo);
+      if(!bookmark._id) {
+        request = $http.post('/api/bookmarks', bookmark);
       } else {
-        request = $http.put('/api/todos/' + todo._id, todo).then(function(result) {
-          todo = result.data.todo;
-          return todo;
+        request = $http.put('/api/bookmarks/' + bookmark._id, bookmark).then(function(result) {
+          bookmark = result.data.bookmark;
+          return bookmark;
         });
       }
       queue.push(request);

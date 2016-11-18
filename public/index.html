@@ -5,21 +5,21 @@
   <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/styles/main.css" type="text/css">
 </head>
-<body ng-app="todoListApp">
+<body ng-app="bookmarkListApp">
 
   <ng-include src="'templates/navbar.html'"></ng-include>
 
-  <h1>My TODOs!</h1>
+  <h1>My Bookmarks</h1>
 
-  <div class="list" ng-controller="mainCtrl">
+  <div class="list" ng-controller="MainCtrl">
     <div class="add">
-      <a href="#" ng-click="addTodo()">
-        + Add a New Task</a>
+      <a href="#" ng-click="addBookmark()">
+        + Add a bookmark</a>
       </div>
-    <todo></todo>
+    <bookmark></bookmark>
    </div>
-
   <script src="/scripts/vendor.bundle.js"></script>
-  <script src="/scripts/todo.bundle.js"></script>
+  <script src="/scripts/bookmark.bundle.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.11/angular-filter.js"></script>
 </body>
 </html>

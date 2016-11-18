@@ -2,14 +2,14 @@
 
 function MainCtrl ($scope, dataService) {
 
-  dataService.getTodos(function(response){
-    var todos = response.data.todo;
-    $scope.todos =  todos;
+  dataService.getBookmarks(function(response){
+    console.log(response.data.bookmarks)
+    var bookmarks = response.data.bookmarks;
+    $scope.bookmarks =  bookmarks;
   });
 
-  $scope.addTodo = function() {
-    $scope.todos.unshift({name: "New entry",
-                      completed: false});
+  $scope.addBookmark = function() {
+    $scope.bookmarks.unshift({name: "New entry"});
   };
 
 }

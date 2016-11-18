@@ -1,6 +1,7 @@
 'use strict';
 
-var Todo = require('./models/todo.js');
+var bookmarkTitle = require('./models/categoryTitle.js');
+var bookmarkList = require('./models/bookmarkList.js');
 
 var todos = [
     'find good drumsets',
@@ -9,9 +10,9 @@ var todos = [
     ];
     
     todos.forEach(function(todo, index) {
-        Todo.find({'name': todo}, function(err, todos) {
+        bookmarkList.find({'name': todo}, function(err, bookmarks) {
             if(!err && !todos.length) {
-                Todo.create({complete: false, name: todo});
+                bookmarkList.create({complete: false, name: todo});
             };
         });
     })

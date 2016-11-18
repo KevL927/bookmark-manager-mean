@@ -2,5 +2,5 @@
 
 var angular = require('angular');
 
-angular.module('todoListApp').controller('mainCtrl', require('./main'));
-angular.module('todoListApp').controller('todoCtrl', require('./todo'));
+angular.module('bookmarkListApp').controller('MainCtrl', require('./main'));
+angular.module('bookmarkListApp').controller('BookmarkCtrl', require('./bookmark'));

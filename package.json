@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "angular": "^1.5.8",
+    "angular-filter": "^0.5.11",
     "body-parser": "1.15.2",
     "mongodb": "^2.2.11",
     "mongoose": "4.6.8"

@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/mean-todo', function(err) {
+mongoose.connect('mongodb://localhost/mean-bookmark', function(err) {
     if (err) {
         console.log('Failed to connect to MongoDB');
     } else {
