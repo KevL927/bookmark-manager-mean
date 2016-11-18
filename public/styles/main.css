@@ -24,6 +24,8 @@ a {
     .list .item label {
       padding-left: 5px;
       cursor: pointer; }
+      .list .item .link{
+        margin-left: 500px; }
     .list .item .editing-label {
       margin-left: 5px;
       font-family: "Varela Round";
